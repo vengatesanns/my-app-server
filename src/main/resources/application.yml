@@ -1,0 +1,11 @@
+spring:
+      datasource:
+            url: jdbc:mysql://localhost:3306/my_app_db?autoReconnect=true&useSSL=false 
+            username: root 
+            password: vengatesanns@freak
+      jpa:
+         hibernate.ddl-auto: auto
+         show-sql:  true
+         generate-ddl: false
+server:
+    port: 7001
