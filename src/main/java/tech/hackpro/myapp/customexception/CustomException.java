@@ -1,17 +1,12 @@
 package tech.hackpro.myapp.customexception;
 
+//@ResponseStatus(HttpStatus.EXPECTATION_FAILED)
 public class CustomException extends Exception{
 	
-	private String errorMessage;
 	
 	public CustomException(String errorMessageInfo)
 	{
-		this.errorMessage = errorMessageInfo;
-	}
-	
-	public String toString()
-	{
-		return this.errorMessage+"" ;
+		super(errorMessageInfo);
 	}
 
 }

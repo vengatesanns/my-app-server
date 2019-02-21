@@ -1,6 +1,9 @@
 package tech.hackpro.myapp.controller;
 
+import java.util.Date;
 import java.util.List;
+
+import javax.validation.Valid;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,9 +31,11 @@ public class HomeController
 	
 	
     @GetMapping("/test")
-    public String getValue()  //Removable
+    public Date getValue() throws CustomException  //Removable
     {
-        return "HelloWorld";
+    	if(new Date() != null)
+    		throw new CustomException("Errorrrrrr!!!!!!");
+        return new Date();
     }
 
     
@@ -49,7 +54,7 @@ public class HomeController
     }
     
     @PostMapping("/saveUserDetails")
-    public void saveUserDetails(@RequestBody UserDetails userInfo) throws CustomException
+    public void saveUserDetails(@Valid @RequestBody UserDetails userInfo) throws CustomException
     {
     	try
     	{

@@ -2,18 +2,30 @@ package tech.hackpro.myapp.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 import tech.hackpro.myapp.superclass.CustomBaseClass;
 
 @Entity
 @Table(name="user_details")
 public class UserDetails extends CustomBaseClass {
-	 
+	
+	@NotNull(message="FirstName Should not be Null")
 	private String firstname;
+	
 	private String middlename;
+	
 	private String lastname;
+
+	@NotNull(message="Email Should not be Null")
+	//@Pattern(regexp="^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\\\.[A-Z]{2,6}$",message="Email-Id Should be in correct format")
 	private String email;
+	
+	@Size(max=10,min=10,message="MobileNo should be 10 Digits")
 	private String mobileNo;
+	
 	private String additionalMobileNo;
 	
 	public String getFirstname() {

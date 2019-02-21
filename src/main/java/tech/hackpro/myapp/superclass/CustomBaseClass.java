@@ -15,9 +15,9 @@ import org.springframework.format.annotation.DateTimeFormat;
 public abstract class CustomBaseClass {
 	
 	protected Date createdAt;
-	protected Date modifiedAt;
-	protected Date modifiedBy;
-	protected Date createdBy;
+//	protected Date modifiedAt;
+//	protected Date modifiedBy;
+//	protected Date createdBy;
 	protected long id;
 	
 	
@@ -40,7 +40,7 @@ public abstract class CustomBaseClass {
 	public void setCreatedAt(Date createdAt) {
 		this.createdAt = createdAt;
 	}
-	public Date getModifiedAt() {
+	/*public Date getModifiedAt() {
 		return modifiedAt;
 	}
 	public void setModifiedAt(Date modifiedAt) {
@@ -57,6 +57,6 @@ public abstract class CustomBaseClass {
 	}
 	public void setCreatedBy(Date createdBy) {
 		this.createdBy = createdBy;
-	}	
+	}	*/
 	
 }
